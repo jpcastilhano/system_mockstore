@@ -7,7 +7,7 @@ Este documento serve como um guia de desenvolvimento iterativo para a construç�
 ## Fase 1: O Alicerce (Design e Contratos)
 **Objetivo:** Definir as regras do jogo e a estrutura de dados antes de escrever qualquer código funcional.
 
-* [V] **1.1. Modelo Entidade-Relacionamento (MER):**
+* [x] **1.1. Modelo Entidade-Relacionamento (MER):**
     * Mapear as tabelas principais: `Usuarios`, `Produtos`, `Categorias`, `Variações/SKUs` (Cor, Tamanho, Estoque) e `Imagens`.
     * Definir os relacionamentos (1:N, N:N) e as chaves estrangeiras.
     * *Ferramentas recomendadas:* dbdiagram.io, Draw.io ou MySQL Workbench.
