@@ -8,9 +8,10 @@ Este documento serve como um guia de desenvolvimento iterativo para a construç�
 **Objetivo:** Definir as regras do jogo e a estrutura de dados antes de escrever qualquer código funcional.
 
 * [x] **1.1. Modelo Entidade-Relacionamento (MER):**
-    * Mapear as tabelas principais: `Usuarios`, `Produtos`, `Categorias`, `Variações/SKUs` (Cor, Tamanho, Estoque) e `Imagens`.
-    * Definir os relacionamentos (1:N, N:N) e as chaves estrangeiras.
-    * *Ferramentas recomendadas:* dbdiagram.io, Draw.io ou MySQL Workbench.
+    * ~~Mapear as tabelas principais: `Usuarios`, `Produtos`, `Categorias`, `Variações/SKUs` (Cor, Tamanho, Estoque) e `Imagens`.~~
+    * ~~Definir os relacionamentos (1:N, N:N) e as chaves estrangeiras.~~
+    * ~~*Ferramentas recomendadas:* dbdiagram.io, Draw.io ou MySQL Workbench.~~
+    * Etapa realizada no dbdiagram. Será feito o posterior upload do código em /docs.
 * [ ] **1.2. O Contrato Central (API-First):**
     * Criar o arquivo `openapi.yaml` (ou `.json`) na raiz do projeto (ex: na pasta `/contracts`).
     * Documentar as rotas de CRUD essenciais (ex: `GET /products`, `POST /products`).
