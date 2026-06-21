@@ -12,5 +12,17 @@ services:
     volumes:
       - mockstore_pgdata:/var/lib/postgresql/data
 
+  api:
+    build:
+      context: ./api-fastapi
+    container_name: mockstore_api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
 volumes:
   mockstore_pgdata:
