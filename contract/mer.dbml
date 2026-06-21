@@ -1,0 +1,94 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table users {
+  id uuid [primary key, note: 'Usar UUIDv7']
+  name varchar
+  email varchar [unique]
+  password_hash varchar [note: 'internal']
+  is_active boolean [note: 'internal']
+  created_at timestamp
+  updated_at timestamp
+  deleted_at timestamp [note: 'internal']
+}
+
+Table addresses {
+  id uuid [primary key]
+  user_id uuid
+  zip_code varchar
+  street varchar
+  number varchar
+  complement varchar
+  neighborhood varchar
+  city varchar
+  state varchar
+  country varchar
+  is_default boolean
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table categories {
+  id uuid [primary key]
+  name varchar
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table products {
+  id uuid [primary key]
+  category_id uuid
+  name varchar
+  description text
+  base_price decimal
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table skus {
+  id uuid [primary key]
+  product_id uuid
+  color varchar
+  size varchar
+  stock integer
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table product_images {
+  id uuid [primary key]
+  product_id uuid
+  sku_id uuid [null, note: 'Se nulo, é uma imagem geral do produto. Se preenchido, pertence a uma cor/variação específica.']
+  url varchar
+  sequence integer [note: 'Controla a ordem de exibição no carrossel (ex: 1, 2, 3...)']
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table orders {
+  id uuid [primary key]
+  user_id uuid
+  address_id uuid
+  status varchar [note: 'Ex: PENDENTE, PAGO, ENVIADO']
+  total_amount decimal
+  created_at timestamp
+  updated_at timestamp
+}
+
+Table order_items {
+  id uuid [primary key]
+  order_id uuid
+  sku_id uuid
+  quantity integer
+  unit_price decimal [note: 'Preço travado no momento da compra']
+}
+
+Ref: products.category_id > categories.id
+Ref: skus.product_id > products.id
+Ref: product_images.product_id > products.id
+Ref: product_images.sku_id > skus.id
+Ref: orders.user_id > users.id
+Ref: orders.address_id > addresses.id
+Ref: order_items.order_id > orders.id
+Ref: order_items.sku_id > skus.id
+Ref: addresses.user_id > users.id
