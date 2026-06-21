@@ -23,9 +23,10 @@ Este documento serve como um guia de desenvolvimento iterativo para a construç�
 ## Fase 2: O Motor Inicial (Backend e Banco de Dados)
 **Objetivo:** Levantar a persistência de dados e a primeira interface de comunicação de forma isolada.
 
-* [ ] **2.1. Dockerização Inicial (Apenas Banco de Dados):**
-    * Criar um `docker-compose.yml` contendo apenas um serviço do PostgreSQL.
-    * Configurar volumes para persistência de dados local e variáveis de ambiente (usuário, senha, banco).
+* [x] **2.1. Dockerização Inicial (Apenas Banco de Dados):**
+    * ~~Criar um `docker-compose.yml` contendo apenas um serviço do PostgreSQL.~~
+    * ~~Configurar volumes para persistência de dados local e variáveis de ambiente (usuário, senha, banco).~~
+    * Etapa configurada. O arquivo 'docker-compose' está na raíz do repositório.
 * [ ] **2.2. A Primeira API (Python / FastAPI):**
     * Configurar o ambiente Python e as dependências (FastAPI, SQLAlchemy/SQLModel, Pydantic, Uvicorn).
     * Conectar a API ao container do PostgreSQL.
