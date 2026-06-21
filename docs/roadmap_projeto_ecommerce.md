@@ -22,6 +22,7 @@ Este documento serve como um guia de desenvolvimento iterativo para a construç�
 
 ## Fase 2: O Motor Inicial (Backend e Banco de Dados)
 **Objetivo:** Levantar a persistência de dados e a primeira interface de comunicação de forma isolada.
+Ref: https://claude.ai/share/ff42cc25-b39a-40e3-971e-ff8767859100
 
 * [x] **2.1. Dockerização Inicial (Apenas Banco de Dados):**
     * ~~Criar um `docker-compose.yml` contendo apenas um serviço do PostgreSQL.~~
